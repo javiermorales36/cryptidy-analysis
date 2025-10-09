@@ -37,6 +37,15 @@ An attacker can provide malicious encrypted data that, when decrypted and passed
 - `exploit.txt` — Output log from PoC run
 - `cve_hunter_advanced.log` — Test logs
 
+### ⚠️ Warning: Safe Payload
+The file `payload_malicioso.bin` is included as part of the PoC. It is safe and only opens the calculator when executed. Do NOT use this file outside of a controlled environment. Verify its integrity using the following hash:
+
+SHA256: [ICB03BD0BBED4F796146F0F508D1E8BFF37A3B64D43AE7CFEA21C232473F3FFC0]
+
+The file `payload_malicioso_cifrado.b64` is included as part of the PoC. It is safe and only opens the calculator when executed. Do NOT use this file outside of a controlled environment. Verify its integrity using the following hash:
+
+SHA256: [F7600DAE96C6C4139ABDAABD045B1D554D53F2D7E08C70A391B96116FF80CD47]
+
 ### Safe test instructions
 
 1. Create a new disposable virtual environment or VM.
