@@ -1,0 +1,3 @@
+D:\cve\cve-hunting\venv\Lib\site-packages\cryptidy\aes_encryption - copia.py: posible inyección en decrypt (fase 8)
+D:\cve\cve-hunting\venv\Lib\site-packages\cryptidy\aes_encryption.py: posible inyección en decrypt (fase 8)
+D:\cve\cve-hunting\venv\Lib\site-packages\cryptidy\symmetric_encryption.py: posible inyección en decrypt (fase 8)
