@@ -88,9 +88,8 @@ Note: The best fix is to replace pickle with a safe format (JSON) and redesign A
 
 ## Credits
 
-Discovered by Javier Morales Gómez
-- GitHub: https://github.com/javiermorales36
-- LinkedIn: https://www.linkedin.com/in/javier-morales-84416b134
+Discovered by Javier Morales
+- GitHub: https://github.com/javiermorales36
 
 ---
 
