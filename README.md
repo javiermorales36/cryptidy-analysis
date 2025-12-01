@@ -1,16 +1,16 @@
 # PoC for cryptidy pickle deserialization RCE
 
-🚨 CVE PoC — Unsafe pickle deserialization vulnerability in cryptidy
+CVE PoC — Unsafe pickle deserialization vulnerability in cryptidy
 
-## 🧠 Summary
+## Summary
 
 This repository contains a proof of concept (PoC) for a remote code execution (RCE) vulnerability in the `cryptidy` Python library. The library uses `pickle.loads` without input validation in `cryptidy/symmetric_encryption.py`, which allows an attacker to craft a malicious payload that, when deserialized, executes arbitrary code.
 
-> ✅ CVE ID: (pending assignment by MITRE)
+>  CVE ID: CVE-2025-63675 
 
 ---
 
-## ⚠️ Vulnerability Details
+## Vulnerability Details
 
 - **Library:** cryptidy (PyPI)
 - **Affected Versions:** 1.2.4 (or "All versions up to current" if not confirmed)
@@ -19,13 +19,13 @@ This repository contains a proof of concept (PoC) for a remote code execution (R
 - **Attack Type:** Remote
 - **Impact:** Remote Code Execution (RCE), Information Disclosure, Denial of Service, Privilege Escalation
 
-### 🔓 Attack Vector
+### Attack Vector
 
 An attacker can provide malicious encrypted data that, when decrypted and passed to `pickle.loads`, executes arbitrary code. A PoC payload (`payload_malicioso.bin`) and a runner (`ejecutar_exploit.py`) are included for testing in a controlled environment.
 
 ---
 
-## 🧪 Proof of Concept (PoC)
+##  Proof of Concept (PoC)
 
 > Warning: The files included demonstrate an exploit. Do NOT run them on production systems or any system you don't own. Use a disposable VM or container.
 
@@ -37,7 +37,7 @@ An attacker can provide malicious encrypted data that, when decrypted and passed
 - `exploit.txt` — Output log from PoC run
 - `cve_hunter_advanced.log` — Test logs
 
-### ⚠️ Warning: Safe Payload
+###  Warning: Safe Payload
 The file `payload_malicioso.bin` is included as part of the PoC. It is safe and only opens the calculator when executed. Do NOT use this file outside of a controlled environment. Verify its integrity using the following hash:
 
 SHA256: [ICB03BD0BBED4F796146F0F508D1E8BFF37A3B64D43AE7CFEA21C232473F3FFC0]
@@ -65,7 +65,7 @@ python ejecutar_exploit.py
 
 ---
 
-## 🔐 Mitigation / Patch Recommendation
+## Mitigation / Patch Recommendation
 
 1. Avoid using `pickle` for untrusted input. Use safe formats such as JSON, or a vetted serialization library with explicit schemas.
 2. If binary serialization is required, implement strict validation and restrict the set of permitted classes during deserialization (e.g., use `pickle.loads` with a safe unpickler or `dill` alternatives with restrictions).
